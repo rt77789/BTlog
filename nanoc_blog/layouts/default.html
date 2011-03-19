@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>A Brand New nanoc Site - <%= @item[:title] %></title>
+	<link rel="stylesheet" type="text/css" href="<%= @site.config()[:base_url] %>/style.css" media="screen">
+    <meta name="generator" content="nanoc 3.1.6">
+  </head>
+  <body>
+	  <div id="main">
+      <%= yield %>
+    </div>
+    <div id="sidebar">
+      <h2>Home</h2>
+      <ul>
+		  <li><a href="<%= @site.config()[:base_url] %>">Home Page</a></li>
+		  <li><%= link_of_item("about") %></li>
+      </ul>
+      <h2>Tags</h2>
+      <ul>
+		  <%= make_tags_list %>
+      </ul>
+    </div>
+  </body>
+</html>

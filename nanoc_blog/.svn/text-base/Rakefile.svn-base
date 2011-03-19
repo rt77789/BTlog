@@ -1,0 +1,65 @@
+
+require 'nanoc3/tasks'
+
+namespace :BTlog do
+
+	# delete an article if it's exist.
+	desc "Delete an article in my BTlog, e.g. rake delete_article subjcet=god"
+
+	task :delete_article do
+		path = ENV['path'] || "content/posts"
+		subject = ENV['subject']
+
+		if subject.nil?
+			$stderr.puts('You need to specify the subject, e.g. rake create_article subject=good day')
+			break
+		end
+
+
+		subject += '.html' unless subject.end_with?('.html')
+		kind = "article"
+
+		full_path = path + "/" + subject
+		File.delete(full_path) if File.exist?(full_path)
+
+	end
+
+	# create an article.
+	desc "Create an article in my BTlog, e.g. rake create_article title=tit subject=sub"
+
+	task :create_article do
+
+		# Check path
+		# default path=posts
+		path = ENV['path'] || "content/posts"
+		title = ENV['title'] || "default title"
+		subject = ENV['subject']
+		kind = "article"
+
+		if subject.nil?
+			$stderr.puts('You need to specify the subject, e.g. rake create_article subject=good day')
+			break
+		end
+
+		subject += '.html' unless subject.end_with?('.html')
+		full_path = path + "/" + subject
+
+		if File.exists?(full_path)
+			$stderr.puts "\t[error] Exists #{full_path}"
+			exit 1
+		end
+
+		template = "---\n"
+		template << "created_at: #{Time.now}\n"
+		template << "excerpt: \n"
+		template << "kind: #{kind}\n"
+		template << "tags: [misc]\n"
+		template << "title: #{title.capitalize}\n"
+		template << "---\n"
+		template << "TODO: Add content to #{full_path}.\n"
+
+		FileUtils.mkdir_p(path) if !File.exists?(path)
+		File.open(full_path, 'w') { |f| f.write(template) }
+
+	end 
+end

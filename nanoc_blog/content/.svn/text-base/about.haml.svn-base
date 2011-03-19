@@ -1,0 +1,11 @@
+--- 
+title: about
+kind: about
+created_at: 9/21/2009
+
+---
+
+%h1=@item[:title]
+%p=@item[:created_at]
+%p
+

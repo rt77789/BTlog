@@ -1,0 +1,14 @@
+<html>
+	<head>
+		<title><%= @item[:title] %></title>
+	</head>
+	<body>
+		<h1>Tag : <%= @item[:tag] %> </h1>
+		<hr>
+		<p>
+		<% items_with_tag(@item[:tag]).each do |item| %>
+		<%= link_to(item[:title], url_for(item)) %><br />
+		<%= item[:created_at] %></p>
+		<% end %>
+	</body>
+</html>
