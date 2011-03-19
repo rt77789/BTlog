@@ -1,2 +1,0 @@
-<%= link_to(@item[:title], @item.content) %>
-<%= @item[:created_at] %> 
