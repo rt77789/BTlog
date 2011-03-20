@@ -28,7 +28,9 @@ compile '/stylesheet/' do
 end
 
 compile 'about' do
+	filter :erb
 	filter :haml
+	#layout 'post'
 	layout 'default'
 end
 
