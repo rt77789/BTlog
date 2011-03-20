@@ -1,7 +1,23 @@
 
 require 'nanoc3/tasks'
+require 'fileutils'
 
 namespace :BTlog do
+
+	# compile the site: clean output directory and `nanoc co`
+	# this guarantee the output/ directory always be the newest version, and the post deleted missed in the output/
+	desc "Compile the site, e.g. rake compile"
+
+	task :compile do
+		path = "output"
+		outpath = "trash"
+		FileUtils.mkdir outpath unless File.exist?(outpath)
+		FileUtils.mkdir path unless File.exist?(path)
+
+		FileUtils.cp_r "#{path}/.", outpath 
+		FileUtils.rm_r path if File.exist?(path)
+		puts `nanoc co`
+	end
 
 	# delete an article if it's exist.
 	desc "Delete an article in my BTlog, e.g. rake delete_article subjcet=god"
