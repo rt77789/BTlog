@@ -24,6 +24,7 @@ enable_output_diff: false
 # there is only a single data source that reads data from the "content/" and
 # "layout/" directories in the site directory.
 
+
 #base_url: http://home.ustc.edu.cn/~xiaoe
 base_url: http://localhost:3000
 

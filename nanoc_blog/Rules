@@ -18,7 +18,6 @@ end
 compile '/posts/*' do
 	rep.filter :erb
 	rep.filter :bluecloth
-	rep.filter :haml
 	rep.layout 'post'
 	rep.layout 'default'
 end

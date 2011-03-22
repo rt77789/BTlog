@@ -4,7 +4,7 @@
 	</head>
 	<body>
 		<h1><%= link_to(@item[:title], url_for(@item)) %></h1>
-		<p>Written at: <%= @item[:created_at] %></p>
+		<p>Published: <%= @item[:created_at] %></p>
 		<p></p>
 		<%= yield %>
 		<div id="disqus_thread"></div>
@@ -18,7 +18,9 @@
 
 		/* * * DON'T EDIT BELOW THIS LINE * * */
 		(function() {
-		 var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+		 var dsq = document.createElement('script'); 
+		 dsq.type = 'text/javascript'; 
+		 dsq.async = true;
 		 dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
 		 (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
 		 })();

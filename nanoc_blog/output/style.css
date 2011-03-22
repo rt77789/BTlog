@@ -97,3 +97,13 @@ a:hover {
 
   line-height: 20px;
 }
+
+.indent {
+	text-indent: 20pt;
+}
+
+#main .margin20 {
+	font-size: 15px;
+	line-height: 20px;
+	margin: 20px 40px ;
+}
