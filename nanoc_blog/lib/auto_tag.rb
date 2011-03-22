@@ -63,3 +63,8 @@ def link_of_item(kind)
 	link_to(kind.capitalize, @site.config()[:base_url] + item.path) unless item.nil?
 end
 
+#
+#
+
+def get_summary(content, n) 
+end

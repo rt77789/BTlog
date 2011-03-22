@@ -9,5 +9,7 @@ created_at: 9/21/2009
 	<%= link_to(post[:title], url_for(post)) %> </strong><br/>
 <%= post[:created_at] %> <br/>
 <%= make_tags(post) %> <br/></p>
+<% rep = post.reps.find { |rep| rep.name.to_s == "default" } %>
+<% rep.compiled_content %>
 
 <% end %>
