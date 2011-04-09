@@ -25,8 +25,8 @@ enable_output_diff: false
 # "layout/" directories in the site directory.
 
 
-#base_url: http://home.ustc.edu.cn/~xiaoe
-base_url: http://localhost:3000
+base_url: http://home.ustc.edu.cn/~xiaoe
+#base_url: http://localhost:3000
 
 data_sources:
   -
