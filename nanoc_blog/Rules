@@ -26,12 +26,18 @@ compile '/stylesheet/' do
 	# don't filter or layout
 end
 
+compile 'longxing' do
+	filter :erb
+	layout 'default'
+end
+
+
 compile 'about' do
 	filter :erb
 	filter :haml
-	#layout 'post'
 	layout 'default'
 end
+
 
 
 compile '*' do
