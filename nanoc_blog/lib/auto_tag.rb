@@ -68,3 +68,10 @@ end
 
 def get_summary(content, n) 
 end
+
+##
+##
+def make_title(item, title)
+	h_size = "2"
+	"<h#{h_size}>" + link_to(title, url_for(item)) + "</h#{h_size}>"
+end

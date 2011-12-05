@@ -3,7 +3,7 @@
 		<title><%= @item[:title] %></title>
 	</head>
 	<body>
-		<h1><%= link_to(@item[:title], url_for(@item)) %></h1>
+		<%= make_title(@item, @item[:title]) %>
 		<p>Published: <%= @item[:created_at] %></p>
 		<p></p>
 		<%= yield %>

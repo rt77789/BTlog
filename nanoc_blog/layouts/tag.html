@@ -3,7 +3,7 @@
 		<title><%= @item[:title] %></title>
 	</head>
 	<body>
-		<h1>Tag : <%= @item[:tag] %> </h1>
+		<%= make_title(@item, "Tag : " + @item[:tag]) %>
 		<hr>
 		<p>
 		<% items_with_tag(@item[:tag]).each do |item| %>

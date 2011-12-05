@@ -20,14 +20,14 @@ namespace :BTlog do
 	end
 
 	# delete an article if it's exist.
-	desc "Delete an article in my BTlog, e.g. rake delete_article subjcet=god"
+	desc "Delete an article in my BTlog, e.g. rake delete subjcet=god"
 
-	task :delete_article do
+	task :delete do
 		path = ENV['path'] || "content/posts"
 		subject = ENV['subject']
 
 		if subject.nil?
-			$stderr.puts('You need to specify the subject, e.g. rake create_article subject=good day')
+			$stderr.puts('You need to specify the subject, e.g. rake create subject=good day')
 			break
 		end
 
@@ -41,9 +41,9 @@ namespace :BTlog do
 	end
 
 	# create an article.
-	desc "Create an article in my BTlog, e.g. rake create_article title=tit subject=sub"
+	desc "Create an article in my BTlog, e.g. rake create title=tit subject=sub"
 
-	task :create_article do
+	task :create do
 
 		# Check path
 		# default path=posts
