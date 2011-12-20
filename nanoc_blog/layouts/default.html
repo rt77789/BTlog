@@ -13,7 +13,8 @@
     <div id="sidebar">
       <h2>Home</h2>
       <ul>
-		  <li><a href="<%= @site.config()[:base_url] %>">Home Page</a></li>
+		  <li><a href="<%= @site.config()[:base_url] %>">Home page</a></li>
+		  <li><%= link_of_item("music") %></li>
 		  <li><%= link_of_item("about") %></li>
       </ul>
       <h2>Tags</h2>
